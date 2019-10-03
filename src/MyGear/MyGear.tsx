@@ -6,10 +6,10 @@ import { Pane, Heading, Button, TextInputField, Paragraph, toaster } from "everg
 
 import GearTable from "./GearTable";
 import GearList from "./GearList";
-import { GearListActions } from "./context/Actions";
-import { useGearListContext } from "./context/GearListContext";
+import { GearListActions } from "../context/Actions";
+import { useGearListContext } from "../context/GearListContext";
 
-const Main: React.FC = () => {
+const MyGear: React.FC = () => {
   const [newGear, setNewGear] = React.useState<string>("");
   const [gearList, dispatch] = useGearListContext();
 
@@ -53,4 +53,4 @@ const Main: React.FC = () => {
   );
 };
 
-export default Main;
+export default MyGear;

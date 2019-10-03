@@ -1,4 +1,4 @@
-import { IGearItem } from "../GearItem";
+import { IGearItem } from "../MyGear/GearItem";
 import { Action, GearListActions } from "../context/Actions";
 
 export default (state: IGearItem[], action: Action) => {

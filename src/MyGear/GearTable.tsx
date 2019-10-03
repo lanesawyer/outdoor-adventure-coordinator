@@ -4,7 +4,7 @@ import uuid from "uuid";
 // @ts-ignore
 import { Table } from "evergreen-ui";
 
-import GearListContext from "./context/GearListContext";
+import GearListContext from "../context/GearListContext";
 import GearTableItem from "./GearTableItem";
 import { IGearItem } from "./GearItem";
 

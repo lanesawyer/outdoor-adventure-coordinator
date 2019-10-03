@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useReducer } from "react";
 
-import { IGearItem } from "../GearItem";
+import { IGearItem } from "../MyGear/GearItem";
 import { Action } from "./Actions";
 
 const GearListContext = createContext<any>({} as any);

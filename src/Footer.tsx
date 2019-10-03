@@ -1,11 +1,16 @@
 import React from "react";
+import styled from "styled-components";
 
 // @ts-ignore
 import { Pane } from "evergreen-ui";
 
 const Footer: React.FC = () => {
+  const Footer = styled.footer`
+    grid-area: ft;
+  `;
+
   return (
-    <footer>
+    <Footer>
       <Pane>
         Built with{" "}
         <span role="img" aria-label="love">
@@ -13,7 +18,7 @@ const Footer: React.FC = () => {
         </span>{" "}
         by Lane Sawyer
       </Pane>
-    </footer>
+    </Footer>
   );
 };
 

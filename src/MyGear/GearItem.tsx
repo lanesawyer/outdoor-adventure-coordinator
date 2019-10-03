@@ -4,9 +4,9 @@ import uuid from "uuid/v4";
 // @ts-ignore
 import { TextInputField, TagInput, Button, Icon } from "evergreen-ui";
 
-import { useGearListContext } from "./context/GearListContext";
+import { useGearListContext } from "../context/GearListContext";
 import GearTag from "./GearTag";
-import { GearListActions } from "./context/Actions";
+import { GearListActions } from "../context/Actions";
 
 export interface IGearItem {
   id?: string;

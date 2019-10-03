@@ -1,7 +1,7 @@
 import React from "react";
 import uuid from "uuid/v4";
 
-import { useGearListContext } from "./context/GearListContext";
+import { useGearListContext } from "../context/GearListContext";
 import GearItem from "./GearItem";
 
 const GearList: React.FC = () => {

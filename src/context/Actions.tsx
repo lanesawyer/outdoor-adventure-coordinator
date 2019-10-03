@@ -1,4 +1,4 @@
-import { IGearItem } from "../GearItem";
+import { IGearItem } from "../MyGear/GearItem";
 
 export enum GearListActions {
   ADD_GEAR_ITEM,
