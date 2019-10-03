@@ -1,10 +1,10 @@
 [
-    { "name": "Stove and fuel" },
+    { "name": "Stove and fuel", "tags": ["group", "old"] },
     { "name": "Water Purifier" },
     { "name": "First Aid Kit" },
     { "name": "Cooking pot" },
     { "name": "Trowel" },
-    { "name": "Bear Cans" },
+    { "name": "Bear Cans", "tags": ["infrequent"] },
     { "name": "Bear Spray" },
     { "name": "Individual Gear" },
     { "name": "Backpack" },

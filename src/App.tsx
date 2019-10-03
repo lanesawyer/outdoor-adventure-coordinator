@@ -4,7 +4,7 @@ import uuid from 'uuid/v4';
 // @ts-ignore
 import { Pane, Heading, TextInputField, Button } from 'evergreen-ui';
 
-import { IGearItem } from './GearItem';
+import GearItem, { IGearItem } from './GearItem';
 import GearTable from './GearTable';
 
 import backpacking from './defaultLists/backpacking.json';
@@ -26,6 +26,10 @@ const App: React.FC = () => {
       <header>
         <Pane>
           <Heading size={900}>Outdoor Adventure Coordinator</Heading>
+          <Button appearance="primary" onClick={() => {
+            localStorage.removeItem('gearList')
+            window.location.reload() 
+          }}>Clear Local Storage (temporary dev button)</Button>
         </Pane>
       </header>
       <main>
@@ -39,7 +43,7 @@ const App: React.FC = () => {
           />
           <Button appearance="primary" onClick={() => setGearList(gearList.concat({ id: uuid(), name: newGear }))}>Add</Button>
           <ul>
-            { gearList.map((gear) => <li key={uuid()}>{gear.name}</li>) }
+            { gearList.map((gear) => <li key={uuid()}><GearItem name={gear.name} tags={gear.tags}/></li>) }
           </ul>
         </Pane>
         <Pane>

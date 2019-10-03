@@ -3,7 +3,8 @@ import React from 'react';
 // @ts-ignore
 import { Table } from 'evergreen-ui';
 
-import GearItem, { IGearItem } from './GearItem';
+import GearTableItem from './GearTableItem';
+import {IGearItem} from './GearItem';
 
 interface GearTable {
     items: IGearItem[];
@@ -26,7 +27,7 @@ const GearTable: React.FC<GearTable> = ({items}) => {
         <Table.Body height={240}>
             {items.map(item => 
                 <Table.Row key={item.id}>
-                    {<GearItem id={item.id} name={item.name} />}
+                    {<GearTableItem id={item.id} name={item.name} />}
                 </Table.Row>)
             }
         </Table.Body>
