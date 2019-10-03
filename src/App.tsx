@@ -1,61 +1,24 @@
-import React from 'react';
-import uuid from 'uuid/v4';
+import React from "react";
 
-// @ts-ignore
-import { Pane, Heading, TextInputField, Button } from 'evergreen-ui';
-
-import GearItem, { IGearItem } from './GearItem';
-import GearTable from './GearTable';
-
-import backpacking from './defaultLists/backpacking.json';
+import { GearListProvider } from "./context/GearListContext";
+import { IGearItem } from "./GearItem";
+import backpacking from "./defaultLists/backpacking.json";
+import Header from "./Header";
+import Main from "./Main";
+import Footer from "./Footer";
+import gearListReducer from "./reducers/gearListReducer";
 
 const App: React.FC = () => {
-
-  const [newGear, setNewGear] = React.useState<string>('');
-
-  const [gearList, setGearList] = React.useState<Array<IGearItem>>(
-   JSON.parse(localStorage.getItem('gearList')!) || backpacking
-  );
-
-  React.useEffect(() => {
-    localStorage.setItem('gearList', JSON.stringify(gearList));
-  }, [gearList]);
+  const initialState: IGearItem[] =
+    JSON.parse(localStorage.getItem("gearList")!) || backpacking;
 
   return (
-    <>
-      <header>
-        <Pane>
-          <Heading size={900}>Outdoor Adventure Coordinator</Heading>
-          <Button appearance="primary" onClick={() => {
-            localStorage.removeItem('gearList')
-            window.location.reload() 
-          }}>Clear Local Storage (temporary dev button)</Button>
-        </Pane>
-      </header>
-      <main>
-        <Pane>
-          <Heading size={600}>Master Gear List</Heading>
-          <TextInputField
-            value={newGear}
-            onChange={(e: any) => setNewGear(e.target.value)}
-            label="Equipment"
-            placeholder="Add equipment"
-          />
-          <Button appearance="primary" onClick={() => setGearList(gearList.concat({ id: uuid(), name: newGear }))}>Add</Button>
-          <ul>
-            { gearList.map((gear) => <li key={uuid()}><GearItem name={gear.name} tags={gear.tags}/></li>) }
-          </ul>
-        </Pane>
-        <Pane>
-          <Heading size={600}>My Gear List</Heading>
-          <GearTable items={gearList} />
-        </Pane>
-      </main>
-      <footer>
-        Built with <span role="img" aria-label="love">💖</span> by Lane Sawyer
-      </footer>
-    </>
+    <GearListProvider initialState={initialState} reducer={gearListReducer}>
+      <Header />
+      <Main />
+      <Footer />
+    </GearListProvider>
   );
-}
+};
 
 export default App;

@@ -1,16 +1,18 @@
-import React from 'react';
+import React from "react";
 
 // @ts-ignore
-import { Badge } from 'evergreen-ui';
+import { Badge } from "evergreen-ui";
 
 interface IGearTag {
-    children: string;
+  children: string;
 }
 
-const GearTag: React.FC<IGearTag> = ({children}) => {
+const GearTag: React.FC<IGearTag> = ({ children }) => {
   return (
-    <Badge color="green" isSolid marginRight={8}>{children}</Badge>
+    <Badge color="green" isSolid marginRight={8}>
+      {children}
+    </Badge>
   );
-}
+};
 
 export default GearTag;
