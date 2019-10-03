@@ -1,7 +1,7 @@
 import React from "react";
 
 // @ts-ignore
-import { Checkbox, Switch, Table } from "evergreen-ui";
+import { IconButton, Switch, Table } from "evergreen-ui";
 
 export interface IGearItem {
   id?: string;
@@ -9,20 +9,16 @@ export interface IGearItem {
 }
 
 const GearItem: React.FC<IGearItem> = ({ id, name }) => {
-  const [isOwned, setIsOwned] = React.useState<boolean>(false);
-
   return (
     <>
-      <Table.TextCell>
-        <Checkbox
-            label={name}
-            checked={isOwned}
-            onChange={(e: any) => setIsOwned(e.target.checked)}
-        />
+      <Table.TextCell flex={1}>
+        {name}
       </Table.TextCell>
-      <Table.TextCell>{name}</Table.TextCell>
-      <Table.TextCell>
+      <Table.TextCell flex={5}>
         <Switch />
+      </Table.TextCell>
+      <Table.TextCell flex={1}>
+        <IconButton icon="trash" intent="danger" />
       </Table.TextCell>
     </>
   );

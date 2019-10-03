@@ -13,14 +13,14 @@ const GearTable: React.FC<GearTable> = ({items}) => {
   return (
     <Table>
         <Table.Head>
-            <Table.TextHeaderCell>
-                Owned
-            </Table.TextHeaderCell>
-            <Table.TextHeaderCell>
+            <Table.TextHeaderCell flex={1}>
                 Name
             </Table.TextHeaderCell>
-            <Table.TextHeaderCell>
+            <Table.TextHeaderCell flex={5}>
                 Can Loan
+            </Table.TextHeaderCell>
+            <Table.TextHeaderCell flex={1}>
+                Remove From Gear
             </Table.TextHeaderCell>
         </Table.Head>
         <Table.Body height={240}>

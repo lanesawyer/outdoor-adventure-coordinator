@@ -7,12 +7,14 @@ import { Pane, Heading, TextInputField, Button } from 'evergreen-ui';
 import { IGearItem } from './GearItem';
 import GearTable from './GearTable';
 
+import backpacking from './defaultLists/backpacking.json';
+
 const App: React.FC = () => {
 
   const [newGear, setNewGear] = React.useState<string>('');
 
   const [gearList, setGearList] = React.useState<Array<IGearItem>>(
-   JSON.parse(localStorage.getItem('gearList')!) || []
+   JSON.parse(localStorage.getItem('gearList')!) || backpacking
   );
 
   React.useEffect(() => {
